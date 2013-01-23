@@ -99,7 +99,7 @@ function go() {
 function showHistory() {
     var history = $.cookie("history")
     if (history) {
-        var h = JSON.parse(history).map(escapeHtml)
+        var h = JSON.parse(history).map(_.escapeXml)
         var text = '<p class="historyHolder">' + h.join('</p><p class="historyHolder">') + '</p>'
         $historyDialog.html(text)
         $historyDialog.dialog("open")
